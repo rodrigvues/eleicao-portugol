@@ -3,11 +3,11 @@ programa
 	
 	funcao inicio()
 	{
-		inteiro voto[2][50]
-		inteiro contaVoto[8], ano
+		inteiro voto[2][4]
+		real contaVoto[8], ano
 		inteiro contaVotoValido = 0, contaVotoNulo = 0, contaVotoBranco = 0
 		inteiro ana = 1, pedro = 2, rita = 3, alfredo = 4, regina = 5, ricardo = 6
-		inteiro eleitores = 50
+		real eleitores = 4
 		inteiro votoTurmaCandidato[6][3]
 		
 		para(inteiro i=0; i < eleitores; i++)
@@ -62,15 +62,15 @@ programa
 		escreva("Total de eleitores válidos : "+contaVotoValido+"\n" )
 		escreva("Total de votos nulos : "+contaVoto[0]+"\n")
 		escreva("Total de votos brancos : "+contaVoto[1]+"\n")
-		escreva("Porcentagem de votos : ", 100 * (contaVotoValido / eleitores),"% de votos válidos, ", 100 * (contaVoto[0] / 50),"% de votos nulos e ", 100 * (contaVoto[1] / 50),"% de votos brancos\n")
+		escreva("Porcentagem de votos : ", 100 * (contaVotoValido / eleitores),"% de votos válidos, ", 100 * (contaVoto[0] / eleitores),"% de votos nulos e ", 100 * (contaVoto[1] / eleitores),"% de votos brancos\n")
 
 		// mostrando porcentagem
-		escreva("Ana : ", 100 * (voto[1][ana] / eleitores) ,"\n")
-		escreva("Pedro : ", 100 * (voto[1][pedro] / eleitores) ,"\n")
-		escreva("Rita : ", 100 * (voto[1][rita] / eleitores) ,"\n")
-		escreva("Alfredo : ", 100 * (voto[1][alfredo] / eleitores) ,"\n")
-		escreva("Regina : ", 100 * (voto[1][regina] / eleitores) ,"\n")
-		escreva("Ricardo : ", 100 * (voto[1][ricardo] / eleitores) ,"\n")
+		escreva("Ana : ", 100 * (contaVoto[2] / eleitores) ,"%\n")
+		escreva("Pedro : ", 100 * (contaVoto[3] / eleitores) ,"%\n")
+		escreva("Rita : ", 100 * (contaVoto[4] / eleitores) ,"%\n")
+		escreva("Alfredo : ", 100 * (contaVoto[5] / eleitores) ,"%\n")
+		escreva("Regina : ", 100 * (contaVoto[6] / eleitores) ,"%\n")
+		escreva("Ricardo : ", 100 * (contaVoto[7] / eleitores) ,"%\n")
 
 		//mostrando porcentagem em relação as turmas
 		para(inteiro i = 0; i < eleitores; i++)
@@ -112,7 +112,7 @@ programa
 			{
 				votoTurmaCandidato[2][1]++
 			}
-			se(voto[0][i] == 3 e voto[2][i] == rita)
+			se(voto[0][i] == 3 e voto[1][i] == rita)
 			{
 				votoTurmaCandidato[2][2]++
 			}
@@ -160,11 +160,11 @@ programa
 			}
 		}
 		
-		escreva("Ana : ",100* (votoTurmaCandidato[0][0] / voto[1][ana])," (Turma 1), ",100* (votoTurmaCandidato[0][1] / voto[1][ana])," (Turma 2), ",100* (votoTurmaCandidato[0][2] / voto[1][ana])," (Turma 3)\n")
-		escreva("Pedro : ",100* (votoTurmaCandidato[1][0] / voto[1][pedro])," (Turma 1), ",100* (votoTurmaCandidato[1][1] / voto[1][pedro])," (Turma 2), ",100* (votoTurmaCandidato[1][2] / voto[1][pedro])," (Turma 3)\n")
-		escreva("Rita : ",100* (votoTurmaCandidato[2][0] / voto[1][rita])," (Turma 1), ",100* (votoTurmaCandidato[2][1] / voto[1][rita])," (Turma 2), ",100* (votoTurmaCandidato[2][2] / voto[1][rita])," (Turma 3)\n")
-		escreva("Alfredo : ",100* (votoTurmaCandidato[3][0] / voto[1][alfredo])," (Turma 1), ",100* (votoTurmaCandidato[3][1] / voto[1][alfredo])," (Turma 2), ",100* (votoTurmaCandidato[3][2] / voto[1][alfredo])," (Turma 3)\n")
-		escreva("Regina : ",100* (votoTurmaCandidato[4][0] / voto[1][regina])," (Turma 1), ",100* (votoTurmaCandidato[4][1] / voto[1][regina])," (Turma 2), ",100* (votoTurmaCandidato[4][2] / voto[1][regina])," (Turma 3)\n")
-		escreva("Ricardo : ",100* (votoTurmaCandidato[5][0] / voto[1][ricardo])," (Turma 1), ",100* (votoTurmaCandidato[5][1] / voto[1][ricardo])," (Turma 2), ",100* (votoTurmaCandidato[5][2] / voto[1][ricardo])," (Turma 3)\n")
+		escreva("Ana :     ",100* (votoTurmaCandidato[0][0] / contaVoto[2])," (Turma 1), ",100* (votoTurmaCandidato[0][1] / contaVoto[2])," (Turma 2), ",100* (votoTurmaCandidato[0][2] /  contaVoto[2])," (Turma 3)\n")
+		escreva("Pedro :   ",100* (votoTurmaCandidato[1][0] / contaVoto[3])," (Turma 1), ",100* (votoTurmaCandidato[1][1] / contaVoto[3])," (Turma 2), ",100* (votoTurmaCandidato[1][2] /  contaVoto[3])," (Turma 3)\n")
+		escreva("Rita :    ",100* (votoTurmaCandidato[2][0] / contaVoto[4])," (Turma 1), ",100* (votoTurmaCandidato[2][1] / contaVoto[4])," (Turma 2), ",100* (votoTurmaCandidato[2][2] /  contaVoto[4])," (Turma 3)\n")
+		escreva("Alfredo : ",100* (votoTurmaCandidato[3][0] / contaVoto[5])," (Turma 1), ",100* (votoTurmaCandidato[3][1] / contaVoto[5])," (Turma 2), ",100* (votoTurmaCandidato[3][2] /  contaVoto[5])," (Turma 3)\n")
+		escreva("Regina :  ",100* (votoTurmaCandidato[4][0] / contaVoto[6])," (Turma 1), ",100* (votoTurmaCandidato[4][1] / contaVoto[6])," (Turma 2), ",100* (votoTurmaCandidato[4][2] /  contaVoto[6])," (Turma 3)\n")
+		escreva("Ricardo : ",100* (votoTurmaCandidato[5][0] / contaVoto[7])," (Turma 1), ",100* (votoTurmaCandidato[5][1] / contaVoto[7])," (Turma 2), ",100* (votoTurmaCandidato[5][2] / contaVoto[7])," (Turma 3)\n")
 	}
 }
