@@ -7,11 +7,9 @@ programa
 		inteiro voto[2][4]
 		real contaVoto[8], ano
 		inteiro contaVotoValido = 0, contaVotoNulo = 0, contaVotoBranco = 0
-		
 		//predefinindo número dos votos e da quantidade de eleitores
 		inteiro ana = 1, pedro = 2, rita = 3, alfredo = 4, regina = 5, ricardo = 6
 		real eleitores = 50
-		
 		//matriz para armazenar quantidade de votos de cada candidato por turma
 		inteiro votoTurmaCandidato[6][3]
 
