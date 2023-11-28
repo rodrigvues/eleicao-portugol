@@ -3,24 +3,33 @@ programa
 	
 	funcao inicio()
 	{
+		//matriz com os votos e as turmas
 		inteiro voto[2][4]
 		real contaVoto[8], ano
 		inteiro contaVotoValido = 0, contaVotoNulo = 0, contaVotoBranco = 0
+		
+		//predefinindo número dos votos e da quantidade de eleitores
 		inteiro ana = 1, pedro = 2, rita = 3, alfredo = 4, regina = 5, ricardo = 6
 		real eleitores = 50
-		inteiro votoTurmaCandidato[6][3]
 		
+		//matriz para armazenar quantidade de votos de cada candidato por turma
+		inteiro votoTurmaCandidato[6][3]
+
+		//perguntando a quantidade de vezes necessária de acordo com a quantidade de eleitores
 		para(inteiro i=0; i < eleitores; i++)
 		{
 			escreva("Sua turma: ")
 			leia(voto[0][i])
 			escreva("Vote: ")
 			leia(voto[1][i])
+
+			//verificando se teve voto errado e perguntando novamente
 			enquanto(voto[1][i] != 0 e voto[1][i] != 10 e voto[1][i] != 1 e voto[1][i] != 2 e voto[1][i] != 3 e voto[1][i] != 4 e voto[1][i] != 5 e voto[1][i] != 6 )
 			{
 				escreva("Candidato inválido, Informe o número correto do candidato : ")
 				leia(voto[1][i])
 			}
+			
 			//contabilizando votos
 			se(voto[1][i] == 0)
 			{
@@ -164,7 +173,8 @@ programa
 				votoTurmaCandidato[5][2]++
 			}
 		}
-		
+
+		//mostrando porcentagens de votos em relação as turmas
 		escreva("Ana     : ",100* (votoTurmaCandidato[0][0] / contaVoto[2]),"% (Turma 1), ",100* (votoTurmaCandidato[0][1] / contaVoto[2]),"% (Turma 2), ",100* (votoTurmaCandidato[0][2] /  contaVoto[2]),"% (Turma 3)\n")
 		escreva("Pedro   : ",100* (votoTurmaCandidato[1][0] / contaVoto[3]),"% (Turma 1), ",100* (votoTurmaCandidato[1][1] / contaVoto[3]),"% (Turma 2), ",100* (votoTurmaCandidato[1][2] /  contaVoto[3]),"% (Turma 3)\n")
 		escreva("Rita    : ",100* (votoTurmaCandidato[2][0] / contaVoto[4]),"% (Turma 1), ",100* (votoTurmaCandidato[2][1] / contaVoto[4]),"% (Turma 2), ",100* (votoTurmaCandidato[2][2] /  contaVoto[4]),"% (Turma 3)\n")
