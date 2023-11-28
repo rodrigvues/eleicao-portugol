@@ -4,7 +4,7 @@ programa
 	funcao inicio()
 	{
 		//matriz com os votos e as turmas
-		inteiro voto[2][4]
+		inteiro voto[2][50]
 		real contaVoto[8], ano
 		inteiro contaVotoValido = 0, contaVotoNulo = 0, contaVotoBranco = 0
 		//predefinindo número dos votos e da quantidade de eleitores
