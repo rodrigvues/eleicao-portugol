@@ -6,7 +6,7 @@ programa
 		//matriz com os votos e as turmas
 		inteiro voto[2][50]
 		real contaVoto[8]
-		inteiro contaVotoValido = 0, contaVotoNulo = 0, contaVotoBranco = 0
+		inteiro contaVotoValido = 0
 		//predefinindo número dos votos e da quantidade de eleitores
 		inteiro ana = 1, pedro = 2, rita = 3, alfredo = 4, regina = 5, ricardo = 6
 		real eleitores = 50
